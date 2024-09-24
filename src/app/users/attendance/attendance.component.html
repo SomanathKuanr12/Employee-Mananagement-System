@@ -1,0 +1,23 @@
+<div class="form-container">
+    <h2>Attendance Form</h2>
+    <form #form="ngForm" (ngSubmit)="onPresent()">
+      <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="text" id="date" name="date" [(ngModel)]="data.date" readonly ngModel>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" [(ngModel)]="data.email" readonly ngModel>
+      </div>
+      <div class="form-group">
+        <label for="status">Today's Status:</label>
+        <select id="status" name="status" required [(ngModel)]="status">
+          <option value="" disabled>Select Status</option>
+          <option value="present">Present</option>
+          <option value="absent">Absent</option>
+        </select>
+      </div>
+      <button type="submit" [disabled]="form.invalid">Submit</button>
+    </form>
+    
+  </div>

@@ -1,0 +1,45 @@
+
+ <input type="text" name="search" (input)="onSelect()" [(ngModel)]="searchText" placeholder="Search here by Id name">
+<span id="select">
+    Sort Salary By:
+    <select name="type" [(ngModel)]="sortText" (change)="onSelect()">     
+        <option value=""></option>
+        <option value="asc">Asc</option>
+        <option value="desc">Desc</option>
+    </select>
+</span>
+<button class="btn btn-primary btn-lg btn-block"  id="add" (click)="onAdd()" > Add Employee</button>
+<!-- <table id="datatableexample"> -->
+<table class="table">
+    <thead class=".table-striped ">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>           
+            <td>Email</td>
+            <td>City</td>          
+            <td>Salary</td>
+            <td>Action</td>
+            <td></td>
+        </tr>
+    </thead>
+        <tbody>
+            <tr *ngFor="let item of employeeData | paginate:{itemsPerPage: limit,currentPage:page,totalItems:total}">
+         <!-- <tr *ngFor="let item of employeeData"> -->
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>             
+                <td>{{item.email}}</td>
+                <td>{{item.city}}</td>                
+                <td>{{item.salary}}</td>              
+                <td><button class="btn btn-success" (click)="onEdit(item.id)" appButton>Edit</button></td>
+                <td><button class="btn btn-danger" (click)="onDelete(item.id)">Delete</button></td>
+            </tr>
+        </tbody>    
+</table>
+<div class="pagination page-sm m-0 float-right" id="paginate">
+    <pagination-controls (pageChange)="getPage($event)"></pagination-controls>
+    <!-- <button (click)="onPrev()">prev</button>
+    <p>{{page}} of {{currentPage}}</p>
+    <button (click)="onNext()">Next</button> -->
+</div>
+
+

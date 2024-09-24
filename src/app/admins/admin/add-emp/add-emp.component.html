@@ -1,0 +1,35 @@
+
+<div id="div">
+  <button id="b" (click)="onClose()">X</button>
+  <p  id="success" *ngIf="message">*{{message}}</p>
+  <p  id="err" *ngIf="errMessage">*{{errMessage}}</p>
+
+    <div class="form-container">
+      <form #myForm="ngForm" (ngSubmit)="onUserAdd(myForm.value)">
+        <div class="form-group">
+          <span>Employee Id:</span>
+          <input type="text" name="id"  ngModel required>
+        </div>
+        <div class="form-group">
+          <span>Name:</span>
+          <input type="text" name="name"  ngModel required>
+        </div>
+        <div class="form-group">
+          <span>Salary:</span>
+          <input type="text" name="salary"  size="10" ngModel required>
+        </div>
+        <div class="form-group">
+          <span>Email:</span>
+          <input type="email" name="email"  ngModel required>
+        </div>
+        <div class="form-group">
+          <span>City:</span>
+          <input type="text" name="city"  ngModel required>
+        </div>
+        <div id="btn">
+         <button appButton>Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

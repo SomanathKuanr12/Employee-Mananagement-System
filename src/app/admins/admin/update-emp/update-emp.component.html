@@ -1,0 +1,31 @@
+<div id="div" appSetBackground>
+  <button id="b" (click)="onClose()">X</button>
+  <div class="form-container" >
+
+    <form #myForm="ngForm">
+      <div *ngIf="currentId" class="form-group" >
+        <span>Employee Id:</span>
+        <input type="text" name="id" [(ngModel)]="currentId" readonly>
+      </div>
+      <div class="form-group">
+        <span>Name:</span>
+        <input type="text" name="name" [(ngModel)]="employee.name">
+      </div>
+      <div class="form-group">
+        <span>Salary:</span>
+        <input type="text" name="salary" [(ngModel)]="employee.salary" size="10">
+      </div>
+      <div class="form-group">
+        <span>Email:</span>
+        <input type="email" name="email" [(ngModel)]="employee.email">
+      </div>
+      <div class="form-group">
+        <span>City:</span>
+        <input type="text" name="city" [(ngModel)]="employee.city">
+      </div>
+      <div id="btn">
+        <button *ngIf="currentId" (click)="onUserUpdate()" appButton>Update</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+
+<table class="table">
+    <thead class=".table-striped ">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>           
+            <td>Email</td>
+            <td>City</td>          
+            <td>Salary</td>
+            <!-- <td>Action</td>
+            <td></td> -->
+        </tr>
+    </thead>
+        <tbody>
+            <tr *ngFor="let item of employeeData | paginate:{itemsPerPage: limit,currentPage:page,totalItems:total}">
+                
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>             
+                <td>{{item.email}}</td>
+                <td>{{item.city}}</td>                
+                <td>{{item.salary}}</td>              
+                
+            </tr>
+        </tbody>    
+</table>
+<div class="pagination page-sm m-0 float-right" id="paginate">
+    <pagination-controls (pageChange)="getPage($event)"></pagination-controls>
+    <!-- <button (click)="onPrev()">prev</button>
+    <p>{{page}} of {{currentPage}}</p>
+    <button (click)="onNext()">Next</button> -->
+</div>

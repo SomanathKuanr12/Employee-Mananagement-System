@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Admin Api Test should handle  login with invalid password 1`] = `
+{
+  "message": "Password does not match",
+}
+`;
+
+exports[`Admin Api Test should handle  login with uregistered id 1`] = `
+{
+  "message": "Unregistered user",
+}
+`;

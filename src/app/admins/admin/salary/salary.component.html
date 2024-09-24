@@ -1,0 +1,13 @@
+<div class="container" *ngIf="display">
+  <h3>Employee Salary Report</h3>
+  <span>Employee ID: </span> {{salaryData[0].id}} <br>
+  <span>Employee Name: </span> {{salaryData[0].name}} <br>
+  <span>Employee Email: </span> {{salaryData[0].email}} <br>
+  <span>Total Present: </span> {{salaryData[0].totalPresent}} <br>
+  <span>Basic Salary: </span> {{salaryData[0].salary}} <br>
+  <span>Salary Payable: </span> {{actualSalary}} <br>
+</div>
+<div class="container" *ngIf="!display">
+<h4>Employee ID can not Found...</h4><br>
+<h4>Please enter a valid employee id</h4>
+</div>
